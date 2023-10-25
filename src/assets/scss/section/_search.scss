@@ -1,0 +1,32 @@
+.search__inner {
+    width: 100%;
+    padding: 17px 40px 18px 40px;
+    border-bottom: 1px solid var(--black600);
+
+    label {
+        display: none;
+    }
+    .search__input {
+        width: 100%;
+        background-color: var(--white);
+        border: 1px solid var(--black600);
+        padding: 15px 30px;
+        border-radius: 50px;
+        color: var(--black);
+    }
+
+    .info {
+        display: flex;
+        justify-content: space-between;
+        color: var(--black300);
+        .author {
+            @include line-one;
+            font-size: 14px;
+            text-decoration: underline;
+            text-underline-position: under;
+        &:hover {
+            color: var(--black100);
+        }
+        }
+    }
+}

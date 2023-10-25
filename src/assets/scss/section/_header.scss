@@ -1,0 +1,162 @@
+.header__logo {
+
+    a {
+        display: flex;
+        padding: 10px;
+        margin: 10px;
+
+        em {
+            width: 40px;
+            height: 40px;
+            margin-right: 12px;
+            border: 1px dashed var(--mcolor);
+            background-color: var(--white);
+            position: relative;
+            border-radius: 50%;
+            color: var(--mcolor);
+            animation: logo 4s ease-in-out infinite;
+
+            @keyframes logo {
+                0% {
+                    color: var(--mcolor);
+                    background-color: var(--white);
+
+                }
+
+                50% {
+                    transform: scale(1.1);
+                    color: var(--mcolor);
+                    background-color: var(--mcolor20);
+                }
+
+                100% {
+                    color: var(--mcolor);
+                    background-color: #fff;
+                }
+            }
+            
+            svg {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                font-size: 1.5rem;
+                transform: translate(-50%, -50%);
+            }
+        }
+        span {
+            color: var(--mcolor);
+            font-size: 20px;
+            line-height: 1;
+            font-family: var(--mainfont-nexon);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.header__menu {
+    padding: 0rem 1.25rem;
+    
+    .menu__tap {
+        // border-bottom: 1px solid var(--black600);
+        // padding: 10px 0;
+        margin-bottom: 1.25rem;
+
+        li {
+            // margin-bottom:5px;
+            
+            a {
+                background: linear-gradient(to bottom, var(--mcolor10) 30%, var(--mcolor40) 100%,);
+                display: block;
+                font-size: 1rem;
+                line-height: 1;
+                padding: 1rem 2rem 1rem 3rem;
+                border-radius: 40px;
+                position: relative;
+                margin-bottom: 1rem;
+                transition: background-color 0.4s;
+                color: var(--black);
+                border: 1px solid var(--mcolor40);
+
+                &:hover {
+                    background: linear-gradient(to bottom, var(--mcolor10) 30%, var(--mcolorpp) 100%,);
+                }
+
+                svg {
+                    width: 1.25rem;
+                    height: 1.25rem;
+                    position: absolute;
+                    top: 0.9rem;
+                    left: 1.25rem;
+                    color: var(--mcolorpp);
+                }
+            }
+
+            &.active {
+                a {
+                    background: linear-gradient(to bottom, var(--mcolor10) 30%, var(--mcolorpp) 100%,);
+                }
+            }
+        }
+    }
+    .keyword {
+        height: auto;
+        max-height: 520px;
+        margin-bottom: 80px;
+
+        li {
+            // margin-bottom: 5px;
+            // display: inline-block;
+
+            a {
+                display: block;
+                font-size: 0.9rem;
+                padding: .5rem;
+                padding-left: 2rem;
+                position: relative;
+                transition: background-color 0.4s;
+                color: var(--black);
+
+                &:hover {
+                    background: linear-gradient(to bottom, var(--mcolor0) 0%, var(--mcolor20) 50%,var(--mcolor0) 100%);
+                    color: var(--mcolorpp);
+                }
+                svg {
+                    width: 1rem;
+                    height: 1rem;
+                    position: absolute;
+                    top: 0.7rem;
+                    left: 0.7rem;
+                    color: var(--mcolor);
+                }
+                &.active {
+                    a {
+                        background-color: var(--mcolor);
+                        color: var(--white);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header__sns {
+    border-top: 1px solid var(--mcolor);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 18px 0 12px;
+    background-color: var(--white);
+    color: var(--mcolor);
+
+    li {
+        display: inline-block;
+
+        a {
+            display: inline-block;
+            padding: 5px 7px;
+        }
+    }
+}
