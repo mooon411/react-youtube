@@ -4,16 +4,23 @@ import { fetchFromAPI } from '../utils/api';
 import { FaUsers } from 'react-icons/fa6';
 import { BsFillCameraVideoFill } from 'react-icons/bs';
 import { IoEyeSharp } from 'react-icons/io5';
+import VideoSearch from '../components/video/VideoSearch';
 
 const Channel = () => {
     const {channelId} = useParams();
     const [channelDetail, setChannelDetail] =useState();
+    const [channelVideo, setChannelVideo] = useState([]);
 
     useEffect(() => {
         const fetchResults = async () => {
             try {
                 const data = await fetchFromAPI(`channels?part=snippet&id=${channelId}`);
                 setChannelDetail(data.items[0]);
+            
+                const videoData = await fetchFromAPI(`search?channelId=${channelId}&part=snippet&order=date`);
+                console.log(videoData);
+                setChannelVideo(videoData.items);
+            
             } catch(error) {
                 console.log(error);
             }
@@ -39,7 +46,9 @@ const Channel = () => {
                             <span><IoEyeSharp />{channelDetail.statistics.viewCount}</span>
                         </div>
                     </div>
-                    <div className='channel__video video__inner'></div>
+                    <div className='channel__video video__inner'>
+                        <VideoSearch videos={channelVideo} />
+                    </div>
                     <div className='channel__more'></div>
                 </div>
             )}
